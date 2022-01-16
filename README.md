@@ -1,0 +1,2 @@
+# StoreKeepersAssistant
+Тестовое задание
