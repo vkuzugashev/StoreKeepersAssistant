@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreKeepersAssistant", "StoreKeepersAssistant.csproj", "{6AB89C1D-60AD-44DB-BAFA-9B08638307A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "..\TestProject1\TestProject1.csproj", "{D10FC03C-3357-4E49-BCE2-7B40F5302E63}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6AB89C1D-60AD-44DB-BAFA-9B08638307A6} = {6AB89C1D-60AD-44DB-BAFA-9B08638307A6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AB89C1D-60AD-44DB-BAFA-9B08638307A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB89C1D-60AD-44DB-BAFA-9B08638307A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB89C1D-60AD-44DB-BAFA-9B08638307A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB89C1D-60AD-44DB-BAFA-9B08638307A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10FC03C-3357-4E49-BCE2-7B40F5302E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10FC03C-3357-4E49-BCE2-7B40F5302E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10FC03C-3357-4E49-BCE2-7B40F5302E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10FC03C-3357-4E49-BCE2-7B40F5302E63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {599B2566-AB6A-47DE-A9AA-D920B0F032E5}
+	EndGlobalSection
+EndGlobal
