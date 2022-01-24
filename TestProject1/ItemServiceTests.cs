@@ -26,7 +26,7 @@ namespace TestProject1
 
             var task = service.GetAllAsync();
             task.Wait();
-            Assert.IsTrue(task.Result is List<ItemViewModel> && task.Result.Count > 0);
+            Assert.IsTrue(task.Result is List<ItemDTO> && task.Result.Count > 0);
         }
 
     }

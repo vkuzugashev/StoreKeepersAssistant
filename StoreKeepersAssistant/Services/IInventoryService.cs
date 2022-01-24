@@ -7,7 +7,7 @@ namespace StoreKeepersAssistant.Services
 {
     public interface IInventoryService
     {
-        List<InventoryViewModel> GetRemainsOnDateAsync(string storageId, DateTime searchTime);
-        Task<List<InvoiceViewModel>> GetAllMoviesAsync();
+        List<InventoryDTO> GetRemainsOnDateAsync(string storageId, DateTime searchTime);
+        Task<List<InvoiceDTO>> GetAllMoviesAsync();
     }
 }

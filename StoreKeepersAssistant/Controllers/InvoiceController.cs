@@ -36,14 +36,14 @@ namespace StoreKeepersAssistant.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        public InvoiceViewModel Create()
+        public InvoiceDTO Create()
         {
-            return new InvoiceViewModel();
+            return new InvoiceDTO();
         }
 
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Create([FromBody] InvoiceViewModel invoice)
+        public async Task<IActionResult> Create([FromBody] InvoiceDTO invoice)
         {
             if (ModelState.IsValid)
                 return Ok(await _service.AddAsync(invoice));
@@ -53,7 +53,7 @@ namespace StoreKeepersAssistant.Controllers
 
         [HttpPut]
         [Route("[action]")]
-        public async Task<IActionResult> Update([FromBody] InvoiceViewModel invoice)
+        public async Task<IActionResult> Update([FromBody] InvoiceDTO invoice)
         {
             if (ModelState.IsValid)
                 return Ok(await _service.UpdateAsync(invoice));

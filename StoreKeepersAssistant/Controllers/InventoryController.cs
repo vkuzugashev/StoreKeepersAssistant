@@ -24,7 +24,7 @@ namespace StoreKeepersAssistant.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        public async Task<IEnumerable<InvoiceViewModel>> GetAllMovies()
+        public async Task<IEnumerable<InvoiceDTO>> GetAllMovies()
         {
             return await _service.GetAllMoviesAsync();
         }

@@ -6,6 +6,6 @@ namespace StoreKeepersAssistant.Services
 {
     public interface IStorageService
     {
-        Task<List<StorageViewModel>> GetAllAsync();
+        Task<IEnumerable<StorageDTO>> GetAllAsync();
     }
 }

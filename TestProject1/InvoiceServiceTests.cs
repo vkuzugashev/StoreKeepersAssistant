@@ -16,10 +16,10 @@ namespace TestProject1
         [TestMethod]
         public void InvoiceCRUDTest()
         {
-            var addTask = this.service.AddAsync(new InvoiceViewModel { 
+            var addTask = this.service.AddAsync(new InvoiceDTO { 
                 InvoiceNumber = "1", 
-                FromStorage = new StorageViewModel { Id = "Store1" }, 
-                ToStorage = new StorageViewModel { Id = "Store2" } 
+                FromStorage = new StorageDTO { Id = "Store1" }, 
+                ToStorage = new StorageDTO { Id = "Store2" } 
             });
             addTask.Wait();
             var invoice = addTask.Result;

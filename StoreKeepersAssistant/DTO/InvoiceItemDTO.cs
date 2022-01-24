@@ -1,6 +1,6 @@
 ﻿namespace StoreKeepersAssistant.ViewModels
 {
-    public class InvoiceItemViewModel
+    public class InvoiceItemDTO
     {
         public int Id { get; set; }
         public int InvoiceId { get; set; }

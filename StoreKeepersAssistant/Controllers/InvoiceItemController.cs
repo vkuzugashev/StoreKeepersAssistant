@@ -25,21 +25,21 @@ namespace StoreKeepersAssistant.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IEnumerable<InvoiceItemViewModel>> Get(int id)
+        public async Task<IEnumerable<ViewModels.InvoiceItemDTO>> Get(int id)
         {
             return await _service.GetByInvoiceIdAsync(id);
         }
 
         [HttpGet]
         [Route("[action]")]
-        public InvoiceItemViewModel Create()
+        public ViewModels.InvoiceItemDTO Create()
         {
-            return new InvoiceItemViewModel();
+            return new ViewModels.InvoiceItemDTO();
         }
 
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Create([FromBody] InvoiceItemViewModel invoiceItem)
+        public async Task<IActionResult> Create([FromBody] ViewModels.InvoiceItemDTO invoiceItem)
         {
             if (ModelState.IsValid)
                 return new ObjectResult(await _service.AddAsync(invoiceItem));

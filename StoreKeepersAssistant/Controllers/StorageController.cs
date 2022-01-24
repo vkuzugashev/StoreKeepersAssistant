@@ -25,7 +25,7 @@ namespace StoreKeepersAssistant.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<StorageViewModel>> Get()
+        public async Task<IEnumerable<StorageDTO>> Get()
         {
             return await _service.GetAllAsync();
         }

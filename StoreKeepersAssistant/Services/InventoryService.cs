@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StoreKeepersAssistant.Models;
+using StoreKeepersAssistant.Repositories;
 using StoreKeepersAssistant.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -10,28 +11,14 @@ namespace StoreKeepersAssistant.Services
 {
     public class InventoryService : IInventoryService
     {
-        StorageContext db;
-        public InventoryService(StorageContext context)
+        IInvoiceRepository rep;
+        public InventoryService(IInvoiceRepository repository) => rep = repository;
+
+        public async Task<List<InvoiceDTO>> GetAllMoviesAsync()
         {
-            db = context;
+            return await rep.GetAllAsync();
         }
-        public async Task<List<InvoiceViewModel>> GetAllMoviesAsync()
-        {
-            var query = from o in db.Invoices
-                        select new InvoiceViewModel
-                        {
-                            Id = o.Id,
-                            InvoiceTime = o.InvoiceTime,
-                            InvoiceNumber = o.InvoceNumber,
-                            FromStorage = new StorageViewModel { Id = o.FromStorage.Id, Name = o.FromStorage.Name },
-                            ToStorage = new StorageViewModel { Id = o.ToStorage.Id, Name = o.ToStorage.Name }
-                        };
-
-            return await query.ToListAsync();
-        }
-
-
-        public List<InventoryViewModel> GetRemainsOnDateAsync(string storageId, DateTime searchTime)
+        public List<InventoryDTO> GetRemainsOnDateAsync(string storageId, DateTime searchTime)
         {
             return null;
         }

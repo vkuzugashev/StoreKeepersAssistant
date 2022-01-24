@@ -24,7 +24,7 @@ namespace TestProject1
 
             var task = service.GetAllAsync();
             task.Wait();
-            Assert.IsTrue(task.Result is List<StorageViewModel> && task.Result.Count > 0);
+            Assert.IsTrue(task.Result is List<StorageDTO> && task.Result.Count > 0);
         }
 
     }

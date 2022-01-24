@@ -25,7 +25,7 @@ namespace StoreKeepersAssistant.Models
                     .WithOne(x => x.Invoice)
                     .OnDelete(DeleteBehavior.Cascade);
             });
-                
         }
+
     }
 }

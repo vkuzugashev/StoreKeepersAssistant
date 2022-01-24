@@ -6,9 +6,9 @@ namespace StoreKeepersAssistant.Services
 {
     public interface IInvoiceService
     {
-        Task<InvoiceViewModel> GetByIdAsync(int id);
-        Task<InvoiceViewModel> AddAsync(InvoiceViewModel invoiceViewModel);
+        Task<InvoiceDTO> GetByIdAsync(int id);
+        Task<InvoiceDTO> AddAsync(InvoiceDTO invoiceViewModel);
         Task<int> DeleteAsync(int id);
-        Task<InvoiceViewModel> UpdateAsync(InvoiceViewModel invoiceViewModel);
+        Task<InvoiceDTO> UpdateAsync(InvoiceDTO invoiceViewModel);
     }
 }

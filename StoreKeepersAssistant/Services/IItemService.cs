@@ -6,6 +6,6 @@ namespace StoreKeepersAssistant.Services
 {
     public interface IItemService
     {
-        Task<List<ItemViewModel>> GetAllAsync();
+        Task<IEnumerable<ItemDTO>> GetAllAsync();
     }
 }

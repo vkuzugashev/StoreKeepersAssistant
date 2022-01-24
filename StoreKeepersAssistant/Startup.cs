@@ -6,7 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StoreKeepersAssistant.Models;
+using StoreKeepersAssistant.Repositories;
 using StoreKeepersAssistant.Services;
+using System.Diagnostics;
 
 namespace StoreKeepersAssistant
 {
@@ -22,11 +24,23 @@ namespace StoreKeepersAssistant
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<StorageContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<StorageContext>(options =>
+            {
+                options.UseSqlServer(connection);
+                options.LogTo(o => Debug.WriteLine(o));
+            }/*, ServiceLifetime.Transient*/);
 
+            services.AddSingleton<ICustomDbContextFactory<StorageContext>, CustomDbContextFactory<StorageContext>>();
 
             services.AddControllersWithViews();
 
+            //Repositories
+            services.AddScoped<IStorageRepository, StorageRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+            services.AddScoped<IInvoiceItemRepository, InvoiceItemRepository>();
+
+            //Services
             services.AddScoped<IInvoiceService, InvoiceService>();
             services.AddScoped<IInvoiceItemService, InvoiceItemService>();
             services.AddScoped<IInventoryService, InventoryService>();
